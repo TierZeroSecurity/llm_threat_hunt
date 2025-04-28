@@ -91,7 +91,7 @@ uv venv
 source venv/bin/activate (bash)
 .\venv\Scripts\activate (Windows)
 uv pip install fastapi uvicorn elasticsearch==8.12.1 requests python-dotenv
-python -m uvicorn server:app --host 0.0.0.0 --port 8000
+python3 -m uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
 ### Integrating with MCP
