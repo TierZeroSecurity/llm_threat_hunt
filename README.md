@@ -1,8 +1,12 @@
-# Elasticsearch Windows Event Analysis MCP Tools
+# Elasticsearch Windows Event Security Analysis
 
-This project provides a set of tools for analyzing Windows event logs stored in Elasticsearch. The tools are designed to help security analysts investigate potential security incidents and identify malicious activity.
+This project provides a lab environment for testing an MCP server that analyzes Windows event logs stored in Elasticsearch. The tools are designed to help security analysts investigate potential security incidents and detect malicious activity.
 
-## Available Tools
+Note: This project is for learning and experimentation, not for production use. It demonstrates SecOps workflows with an augmented LLM and MCP :)   
+
+## MCP Server (mcp-hunt-server)
+
+### Available Tools
 
 | Tool | Description |
 |------|-------------|
@@ -20,7 +24,7 @@ This project provides a set of tools for analyzing Windows event logs stored in 
 | `generate_threat_analysis` | Generates a RAG-based threat analysis for the given events. |
 | `extract_iocs_from_events` | Extracts potential indicators of compromise (IOCs) from the given events. |
 
-## Features
+### Features
 
 - Field-based deduplication for Sysmon events
 - Integration with external threat intelligence sources
@@ -28,7 +32,7 @@ This project provides a set of tools for analyzing Windows event logs stored in 
 - Customizable focus areas for event analysis
 - Health monitoring of services
 
-## Install
+### Install
 
 1. Setup virtual environment
 ```
@@ -58,7 +62,7 @@ claude_desktop_config.json
 ```
 
 
-## MCP Threat Intelligence Service
+## MCP Threat Intelligence Service (mcp-threat-intel)
 
 This service provides threat intelligence capabilities for the MCP Windows Event Analysis toolkit.
 
@@ -75,23 +79,18 @@ This service provides threat intelligence capabilities for the MCP Windows Event
 
 1. Fill in your API keys in the `.env` file
 2. Ensure Elasticsearch is accessible with the provided configuration
-3. Start the service using the systemd service file or manually
+3. Start the service manually
+4. Once confirmed working, you can run as a service
 
 ### Running the Service
-
-### Using systemd (recommended)
-
-```bash
-sudo cp threat-intel.service /etc/systemd/system/
-sudo systemctl daemon-reload
-sudo systemctl enable threat-intel
-sudo systemctl start threat-intel
-```
 
 ### Manual Start
 
 ```bash
-source venv/bin/activate
+uv venv
+source venv/bin/activate (bash)
+.\venv\Scripts\activate (Windows)
+uv pip install fastapi uvicorn elasticsearch==8.12.1 requests python-dotenv
 python -m uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
@@ -104,7 +103,7 @@ THREAT_INTEL_HOST=localhost
 THREAT_INTEL_PORT=8000
 ```
 
-## The ELK Stack
+## The ELK Stack (elk)
 
 1. Copy logstash.conf to ./logstash/pipeline/
 2. Copy docker-compose.yml to current directory
@@ -112,3 +111,5 @@ THREAT_INTEL_PORT=8000
 ```
 docker compose up -d
 ```
+
+Note: the current setup uses HTTP port 9200 for Elasticsearch, make necessary changes in docker-compose.yml and logstash.conf for HTTPS.
