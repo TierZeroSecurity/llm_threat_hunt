@@ -2,7 +2,9 @@
 
 This project provides a lab environment for testing an MCP server that analyzes Windows event logs stored in Elasticsearch. The tools are designed to help security analysts investigate potential security incidents and detect malicious activity.
 
-Note: This project is for learning and experimentation, not for production use. It demonstrates SecOps workflows with an augmented LLM and MCP :)   
+Note: This project is for learning and experimentation, not for production use. It demonstrates SecOps workflows with an augmented LLM and MCP :) 
+
+![claude_desktop](https://github.com/user-attachments/assets/07dc0819-e07a-4958-966d-624a0650a547)
 
 ## MCP Server (mcp-hunt-server)
 
