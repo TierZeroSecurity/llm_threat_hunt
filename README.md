@@ -1,4 +1,4 @@
-# MCP Server to Interact with Elasticsearch and Enable LLM to Analyse Sysmon Logs
+# MCP Server to Interact with Elasticsearch and Enable LLM to Threat Hunt
 
 This project provides a lab environment for testing an MCP server that interacts with Elasticsearch where Windows Event/Sysmon logs are stored. This enables LLM to analyse the logs to identify malicious activities and potential threats.
 
