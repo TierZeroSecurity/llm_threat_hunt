@@ -1,6 +1,6 @@
-# Elasticsearch Windows Event Security Analysis
+# MCP Server to Interact with Elasticsearch and Enable LLM to Analyse Sysmon Logs
 
-This project provides a lab environment for testing an MCP server that analyzes Windows event logs stored in Elasticsearch. The tools are designed to help security analysts investigate potential security incidents and detect malicious activity.
+This project provides a lab environment for testing an MCP server that interacts with Elasticsearch where Windows Event/Sysmon logs are stored. This enables LLM to analyse the logs to identify malicious activities and potential threats.
 
 Note: This project is for learning and experimentation, not for production use. It demonstrates SecOps workflows with an augmented LLM and MCP :) 
 
