@@ -87,10 +87,10 @@ This service provides threat intelligence capabilities for the MCP Windows Event
 ### Manual Start
 
 ```bash
-uv venv
+python3 -m venv venv
 source venv/bin/activate (bash)
 .\venv\Scripts\activate (Windows)
-uv pip install fastapi uvicorn elasticsearch==8.12.1 requests python-dotenv
+pip install fastapi uvicorn elasticsearch==8.12.1 requests python-dotenv
 python3 -m uvicorn server:app --host 0.0.0.0 --port 8000
 ```
 
